@@ -14,7 +14,10 @@ class UsersController extends Controller
         // $this->middleware('jwt.auth');
 
          //protect specific Routes
-        $this->middleware('jwt.auth', ['except' => ['index', 'store']]);
+       
+     $this->middleware('jwt.auth', ['except' => ['index', 'store']]);
+      // $this->middleware('jwt.refresh',['except' => ['index', 'store']]);
+      //  $this->middleware('jwt.refresh');
     }
     /**
      * Display a listing of the resource.
@@ -29,6 +32,9 @@ class UsersController extends Controller
         // return $response;
         $users= User::all();
         $response = Response::json($users,200);
+      
+        
+        
         return $response;
     }
 

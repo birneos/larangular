@@ -15,6 +15,13 @@ class PagesController extends Controller
     {
         return view('welcome');
     }
+    
+    
+    public function test()
+    {
+        return view('test');
+    }
+    
        /**
      * Display a listing of the resource.
      *
@@ -41,7 +48,7 @@ class PagesController extends Controller
      */
     public function contact()
     {
-        return view('tickets.create');
+        return view('contact');
     }
 
     /**

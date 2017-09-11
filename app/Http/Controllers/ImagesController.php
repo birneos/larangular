@@ -6,20 +6,38 @@ use Illuminate\Http\Request;
 use App\Image;
 use Illuminate\Support\Facades\Response;
 
+use Closure;
+
 class ImagesController extends Controller
 {
     //to protect all Images Routes we are using middleware
     public function __construct()
     {
+       
         //protect all Images Routes
        // $this->middleware('jwt.auth');
 
         //protect specific Routes
         $this->middleware('jwt.auth', ['except' => ['index', 'show']]);
 
+      //  $this->middleware('jwt.auth', ['except' => ['index','store','refresh']]);
+     
+ 
         
 
     }
+
+   
+
+    public function refresh()
+    {
+        $current_token  = JWTAuth::getToken();
+        $token          = JWTAuth::refresh($current_token);
+        $response->headers->set('Authorization', 'Bearer '.$token);
+
+        return response()->json(compact('token'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -33,6 +51,7 @@ class ImagesController extends Controller
 
         //or alternative
          $images = Image::all();
+        
         return $images;
     }
 
@@ -188,5 +207,42 @@ class ImagesController extends Controller
 
          return $response;
 
+    }
+
+    public function handle($request, Closure $next)
+    {
+        // caching the next action
+        $response = $next($request);
+
+        try
+        {
+            if (! $user = JWTAuth::parseToken()->authenticate() )
+            {
+                return ApiHelpers::ApiResponse(101, null);
+            }
+        }
+        catch (TokenExpiredException $e)
+        {
+            // If the token is expired, then it will be refreshed and added to the headers
+            try
+            {
+                $refreshed = JWTAuth::refresh(JWTAuth::getToken());
+                $response->header('Authorization', 'Bearer ' . $refreshed);
+            }
+            catch (JWTException $e)
+            {
+                return ApiHelpers::ApiResponse(103, null);
+            }
+            $user = JWTAuth::setToken($refreshed)->toUser();
+        }
+        catch (JWTException $e)
+        {
+            return ApiHelpers::ApiResponse(101, null);
+        }
+
+        // Login the user instance for global usage
+        Auth::login($user, false);
+
+        return $response;
     }
 }

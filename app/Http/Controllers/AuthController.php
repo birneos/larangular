@@ -13,7 +13,33 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 class AuthController extends Controller
 {
 
-    
+
+ public function refresh()
+    {
+        $current_token  = JWTAuth::getToken();
+        $token          = JWTAuth::refresh($current_token);
+        $response->headers->set('Authorization', 'Bearer '.$token);
+
+        return response()->json(compact('token'));
+    }
+    public function refreshToken(Request $request){
+
+
+
+         try {
+            $newToken = JWTAuth::parseToken()->refresh();
+
+            if ($newToken) {
+                $message = ['success' => $newToken];
+                return $response = Response::json(["token" => $newToken], 200);
+            } else {
+                $message = ['errors' => "Refreshed Token invalid"];
+                return $response = Response::json($message, 202);
+            }
+        } catch (JWTException $e) {
+            return response()->json(['error' => 'could_not_create_refreshed_token'], 500);
+        }
+    }
 
     public function authenticate(Request $request)
 {

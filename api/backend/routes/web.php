@@ -13,7 +13,8 @@
 
 
 Route::get('/', 'PagesController@index');
-Route::get('/home', 'PagesController@home');
+Route::get('/test', 'PagesController@test');
+Route::get('/homes', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'TicketsController@create');
 Route::post('/contact', 'TicketsController@store');
@@ -22,5 +23,5 @@ Route::get('/ticket/{slug?}', 'TicketsController@show');
 Route::get('/ticket/{slug?}/edit','TicketsController@edit');
 
 
-Route::post('/ticket/{slug?}/edit','TicketsController@update');
-Route::post('/ticket/{slug?}/delete','TicketsController@destroy');
+// Route::post('/ticket/{slug?}/edit','TicketsController@update');
+// Route::post('/ticket/{slug?}/delete','TicketsController@destroy');

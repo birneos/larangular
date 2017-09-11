@@ -12,4 +12,17 @@ class Ticket extends Model
 
       //Alternatively, you may use the $guarded property to make all attributes mass assignable except for your chosen attributes. For example, I use the id column here:
       //protected $guarded = ['id'];
+
+
+      public function user()
+      {
+          return $this->belongsTo('App\User');
+      }
+
+      public function getTitle()
+      {
+          return $this->title
+      }
+
+     // protected $table = 'yourCustomTableName';
 }
