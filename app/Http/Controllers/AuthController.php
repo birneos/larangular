@@ -22,6 +22,7 @@ class AuthController extends Controller
 
         return response()->json(compact('token'));
     }
+    
     public function refreshToken(Request $request){
 
 

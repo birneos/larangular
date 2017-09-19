@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Learning Laravel</a>
+            <a class="navbar-brand" href="/">Potstupimi</a>
         </div>
 
         <!-- Navbar Right -->
@@ -18,14 +18,30 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    @if(Auth::check())
+                         {!! Auth::user()->name !!}
+                        @else
+                       Member
+
+                    @endif
+
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/users/register">Register</a></li>
-                        <li><a href="/users/login">Login</a></li>
+                    
+                    @if (Auth::check())
+                         @role('manager')
+                         <li><a href="/admin">Admin</a></li>
+                         @endrole
+                         <li><a href="/users/logout">Logout</a></li>
+                     @else
+                         <li><a href="/users/register">Register</a></li>
+                         <li><a href="/users/login">Login</a></li>
+                       @endif
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+

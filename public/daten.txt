@@ -1,0 +1,66 @@
+Array
+(
+    [DOCUMENT_ROOT] => /Users/birneos/Documents/workspace/project/larangular/api/backend/public
+    [REMOTE_ADDR] => 127.0.0.1
+    [REMOTE_PORT] => 52681
+    [SERVER_SOFTWARE] => PHP 5.6.30 Development Server
+    [SERVER_PROTOCOL] => HTTP/1.1
+    [SERVER_NAME] => 127.0.0.1
+    [SERVER_PORT] => 8000
+    [REQUEST_URI] => /users/login
+    [REQUEST_METHOD] => GET
+    [SCRIPT_NAME] => /index.php
+    [SCRIPT_FILENAME] => /Users/birneos/Documents/workspace/project/larangular/api/backend/public/index.php
+    [PATH_INFO] => /users/login
+    [PHP_SELF] => /index.php/users/login
+    [HTTP_HOST] => localhost:8000
+    [HTTP_CONNECTION] => keep-alive
+    [HTTP_CACHE_CONTROL] => max-age=0
+    [HTTP_UPGRADE_INSECURE_REQUESTS] => 1
+    [HTTP_USER_AGENT] => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+    [HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+    [HTTP_REFERER] => http://localhost:8000/
+    [HTTP_ACCEPT_ENCODING] => gzip, deflate, br
+    [HTTP_ACCEPT_LANGUAGE] => de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4
+    [HTTP_COOKIE] => XSRF-TOKEN=eyJpdiI6Imo3ZVwveGFWQjJRaGdYVG9vUDl5d01RPT0iLCJ2YWx1ZSI6ImhVK3RMNUNQbWxqY3Zad3lqVjF4RUU5ZGlqdFZrZVhId2lxSlFDNWpuQXNQSVk3M1NJSWZYOWpRTDRmXC9kRFh3WEJPRjBhODdqdzZvTzNMVExiOEpJdz09IiwibWFjIjoiMzg4MzMzN2NlYzJkM2UwNTE3ZTBkNWQwMGI5OWRiYWU0YjNlNTEwM2QyNTc1MjAzYzc2YmRkZDhhNGU3ZDk1MSJ9; laravel_session=eyJpdiI6IkZcLzhhUmQ1RVpJWjM0SGxPRGhcL200dz09IiwidmFsdWUiOiJISkNLcHNOQVM2NDk1R24yVXV1S3VidmFhT0ZKQytLb0ZwRVJVRkR5aTRTeVJZKzFjYUd1eFhmYk81amF5Szhma2tCVk1NalhvZWNINFYyeVFyaitZZz09IiwibWFjIjoiZGVhNzYyNDAyZDVkZWIzOGFkZGVmYmIxOWVjMDdmYWY4NDdhYjA3M2Y2Y2IwMjI4NDdhYWVmZmRhYmVmZTRkZiJ9
+    [REQUEST_TIME_FLOAT] => 1505810191.0333
+    [REQUEST_TIME] => 1505810191
+    [argv] => Array
+        (
+        )
+
+    [argc] => 0
+)
+Array
+(
+    [0] => Illuminate\Support\Traits\Macroable
+    [1] => Illuminate\Http\Concerns\InteractsWithContentTypes
+    [2] => Illuminate\Http\Concerns\InteractsWithFlashData
+    [3] => Illuminate\Http\Concerns\InteractsWithInput
+    [4] => Illuminate\Database\Eloquent\Concerns\HasAttributes
+    [5] => Illuminate\Database\Eloquent\Concerns\HasEvents
+    [6] => Illuminate\Database\Eloquent\Concerns\HasGlobalScopes
+    [7] => Illuminate\Database\Eloquent\Concerns\HasRelationships
+    [8] => Illuminate\Database\Eloquent\Concerns\HasTimestamps
+    [9] => Illuminate\Database\Eloquent\Concerns\HidesAttributes
+    [10] => Illuminate\Database\Eloquent\Concerns\GuardsAttributes
+    [11] => Illuminate\View\Concerns\ManagesComponents
+    [12] => Illuminate\View\Concerns\ManagesEvents
+    [13] => Illuminate\View\Concerns\ManagesLayouts
+    [14] => Illuminate\View\Concerns\ManagesLoops
+    [15] => Illuminate\View\Concerns\ManagesStacks
+    [16] => Illuminate\View\Concerns\ManagesTranslations
+    [17] => Illuminate\Database\DetectsDeadlocks
+    [18] => Illuminate\Database\DetectsLostConnections
+    [19] => Illuminate\Database\Concerns\ManagesTransactions
+    [20] => Illuminate\Auth\Access\HandlesAuthorization
+    [21] => Illuminate\Routing\RouteDependencyResolverTrait
+    [22] => Illuminate\Auth\CreatesUserProviders
+    [23] => Illuminate\Cache\RetrievesMultipleKeys
+    [24] => Illuminate\Foundation\Auth\Access\AuthorizesRequests
+    [25] => Illuminate\Foundation\Bus\DispatchesJobs
+    [26] => Illuminate\Foundation\Validation\ValidatesRequests
+    [27] => Illuminate\Foundation\Auth\AuthenticatesUsers
+    [28] => Illuminate\Foundation\Auth\RedirectsUsers
+    [29] => Illuminate\Foundation\Auth\ThrottlesLogins
+)

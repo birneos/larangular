@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Response;
 
+
+
+
 class UsersController extends Controller
 {
 
@@ -103,7 +106,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        
     }
 
     /**

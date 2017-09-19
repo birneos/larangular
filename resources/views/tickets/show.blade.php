@@ -9,6 +9,8 @@
                     <p> <strong>Status</strong>: {!! $ticket->status ? 'Pending' : 'Answered' !!}</p>
                     <p> {!! $ticket->content !!} </p>
                 </div>
+
+                
                 <a href="#" class="btn btn-info"><a href="{!! action('TicketsController@edit', $ticket->slug) !!}" class="btn btn-info">Edit</a>
 
                 <form method="post" action="{!! action('TicketsController@destroy', $ticket->slug) !!}" class="pull-left">

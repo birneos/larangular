@@ -26,6 +26,7 @@
                         <label for="title" class="col-lg-2 control-label">Title</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                            <span class="help-block">Useful title description</span>
                         </div>
                     </div>
                     <div class="form-group">

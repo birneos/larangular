@@ -17,6 +17,9 @@ class TicketsController extends Controller
     {
         //read all Ticket from databse and  compact() method to convert the result to an array, and pass it to the view
         $tickets = Ticket::all();
+
+     
+
         return view('tickets.index', compact('tickets'));
 
         //alternatively
@@ -43,6 +46,7 @@ class TicketsController extends Controller
      */
     public function store(TicketFormRequest $request)
     {
+        //uniqueid() generate a unique ID based on the microtime
         $slug = uniqid();
         
         $ticket = new Ticket(array(
@@ -56,7 +60,11 @@ class TicketsController extends Controller
 
     $werbung = "Dies ist  einfach nur Werbung";
     //after save data redirect with a message
-    return redirect('/contact')->with('status', 'Your ticket has been created! Its unique id is: '.$slug);
+    return redirect('/contact')->with( array( 
+        
+        'status' => 'Your ticket has been created! Its unique id is: '.$slug,
+        'werbung'=> $werbung
+    ));
 
     }
 
@@ -107,6 +115,7 @@ class TicketsController extends Controller
     public function edit($slug)
     {
         $ticket = Ticket::whereSlug($slug)->firstOrFail();
+        
         return view('tickets.edit', compact('ticket'));
     }
 

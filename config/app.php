@@ -199,6 +199,11 @@ return [
         * JWT AUTH
         */
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+
+        /**
+        * Laravel permission installed -> composer require spatie/laravel-permission
+        */
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*

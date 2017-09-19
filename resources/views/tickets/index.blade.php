@@ -30,8 +30,8 @@
                                     <td>{!! $ticket->id !!} </td>
                                    <!-- <td>{!! $ticket->title !!}</td>  without action link -->
                                      <td> <a href="{!! action('TicketsController@show', $ticket->slug) !!}">{!! $ticket->title !!} </a></td>
-
                                      <!--- alternatively action('TicketsController@show', ['slug' => $ticket->slug]) -->
+                                     
                                     <td>{!! $ticket->status ? 'Pending' : 'Answered' !!}</td>
                                 </tr>
                             @endforeach

@@ -13,6 +13,8 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+
+     //enable a middleware for every route
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
@@ -25,6 +27,8 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+
+     //If you want to enable a middleware for just the web group (the routes/web.php), you can append it to the $middlewareGroups property:
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -34,6 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            
         ],
 
         'api' => [
@@ -49,6 +54,9 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+
+     //However, we just want to assign the Manager middleware to our admin route group. Therefore, all we need to do is 
+     //append the Manager middleware to the $routeMiddleware property.
     protected $routeMiddleware = [
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -58,6 +66,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'cors' => \App\Http\Middleware\Cors::class,
         'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
-        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken'
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
+        'manager' => \App\Http\Middleware\Manager::class,
     ];
 }

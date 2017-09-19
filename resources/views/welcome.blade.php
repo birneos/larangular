@@ -71,18 +71,18 @@
                     @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a href="{{ url('/users/login') }}">Login</a>
+                        <a href="{{ url('/users/register') }}">Register</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                   Potstupimi
                 </div>
 
-              <div class="quote">Put your custom quote here!</div>
+              <div class="quote">Welcome my friend</div>
                 
             </div>
         </div>

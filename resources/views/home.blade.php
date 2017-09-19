@@ -1,4 +1,4 @@
-@extends('master')
+@extends('master-material')
 @section('title', 'Home')
 
 
